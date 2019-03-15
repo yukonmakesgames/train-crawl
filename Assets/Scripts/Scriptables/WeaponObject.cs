@@ -8,4 +8,6 @@ public class WeaponObject : ScriptableObject
     public float Speed = 1f;
     public float Knockback = 1f;
     public float Stun = 1f;
+    [Range(-1f, 1f)]
+    public float JuiceCost = -0.125f;
 }

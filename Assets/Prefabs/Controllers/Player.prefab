@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8672152700560519945}
   - component: {fileID: 8672152700560519946}
   - component: {fileID: 8672152700560519943}
-  m_Layer: 0
+  - component: {fileID: 338125058}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -45,9 +46,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 1.5
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.75, z: 0}
 --- !u!54 &8672152700560519946
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,14 +77,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0524ea189885974997d6850bafff034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  juiceMax: 1
+  juiceRegen: 0.125
   movementSpeed: 3
   turnSpeed: 4
+  groundCheckDistance: 0.125
   hands:
   - {fileID: 6048808227544917274}
   - {fileID: 1826998057715948302}
   weapons:
   - {fileID: 11400000, guid: 17861bd3f145efe47a03fcc74324fcc1, type: 2}
   - {fileID: 11400000, guid: 7a72d17eda6688f4dae00fbcb65fe5cf, type: 2}
+  juice: 1
+--- !u!95 &338125058
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8672152700560519947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: daca0b6ebaeed314fb8b633abdf71f5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8672152701207386705
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,7 +119,7 @@ GameObject:
   - component: {fileID: 8672152701207386702}
   - component: {fileID: 8672152701207386703}
   - component: {fileID: 8672152701207386704}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -110,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8672152701207386705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8350077138485792024}
@@ -266,6 +290,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Left Hand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578255106922907322, guid: b627c53deebb25246a157dbef134e255,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6578255106922907323, guid: b627c53deebb25246a157dbef134e255,
         type: 3}

@@ -5,6 +5,7 @@ public class HandController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Collider hitbox;
+    private PlayerController playerController;
 
     private WeaponObject weaponObject;
 
@@ -13,6 +14,7 @@ public class HandController : MonoBehaviour
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
         hitbox = GetComponent<Collider>();
+        playerController = GetComponentInParent<PlayerController>();
 
         HitUnactive();
     }
@@ -23,8 +25,8 @@ public class HandController : MonoBehaviour
         {
             EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
 
-            enemyController.TakeDamage(weaponObject.Damage, weaponObject.Stun);
             enemyController.Knockback(other.transform.position - transform.position, weaponObject.Knockback);
+            enemyController.TakeDamage(weaponObject.Damage, weaponObject.Stun);
         }
     }
 
@@ -39,12 +41,17 @@ public class HandController : MonoBehaviour
     public void Attack()
     {
         animator.SetTrigger("Attack");
-        HitActive();
+    }
+
+    public void Die()
+    {
+        animator.SetTrigger("Dead");
     }
 
     public void HitActive()
     {
         hitbox.enabled = true;
+        playerController.JuicePlayer(weaponObject.JuiceCost);
     }
 
     public void HitUnactive()

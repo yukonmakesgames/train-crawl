@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FrankEnemyController : EnemyController
 {
@@ -21,10 +19,13 @@ public class FrankEnemyController : EnemyController
         }
         else
         {
-            Vector3 calculatedVelocity = Vector3.Normalize(playerObject.transform.position - transform.position) * speed;
-            Vector3 targetVelocity = new Vector3(calculatedVelocity.x, rb.velocity.y, calculatedVelocity.z);
+            if(!invincible)
+            {
+                Vector3 calculatedVelocity = Vector3.Normalize(playerObject.transform.position - transform.position) * speed;
+                Vector3 targetVelocity = new Vector3(calculatedVelocity.x, rb.velocity.y, calculatedVelocity.z);
 
-            rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, acceleration);
+                rb.velocity = Vector3.Lerp(rb.velocity, targetVelocity, acceleration);
+            }   
         }
     }
 }

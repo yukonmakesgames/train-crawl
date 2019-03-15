@@ -32,8 +32,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  touchDamage: 0.25
+  touchKnockback: 10
   knockbackResistance: 0
   spriteAnimator: {fileID: 2291851813946581731}
+  invincible: 0
   rb: {fileID: 0}
   speed: 6
   acceleration: 0.03125

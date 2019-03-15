@@ -16,3 +16,5 @@ MonoBehaviour:
   Damage: 999
   Speed: 0.5
   Knockback: 999
+  Stun: 1
+  JuiceCost: 1

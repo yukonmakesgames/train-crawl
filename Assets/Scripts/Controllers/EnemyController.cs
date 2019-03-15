@@ -6,6 +6,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float health = 1f;
     [SerializeField]
+    private float touchDamage = 0.25f;
+    [SerializeField]
+    private float touchKnockback = 5f;
+    [SerializeField]
     [Range(0f, 1f)]
     private float knockbackResistance = 0f;
 
@@ -13,7 +17,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private Animator spriteAnimator;
 
-    private bool invincible = false;
+    [HideInInspector]
+    public bool invincible = false;
     private float currentHealth;
 
     [HideInInspector]
@@ -60,8 +65,20 @@ public class EnemyController : MonoBehaviour
 
     public void Knockback(Vector3 _direction, float _knockback)
     {
-        _direction = new Vector3(_direction.normalized.x, 0.5f, _direction.normalized.z);
+        if (!invincible)
+        {
+            _direction = new Vector3(_direction.normalized.x, 0.5f, _direction.normalized.z);
 
-        rb.AddForce(_direction.normalized * _knockback, ForceMode.Impulse);
+            rb.AddForce(_direction.normalized * _knockback, ForceMode.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.gameObject.CompareTag("Player"))
+        {
+            collision.collider.gameObject.GetComponent<PlayerController>().JuicePlayer(-touchDamage);
+            collision.collider.gameObject.GetComponent<PlayerController>().Knockback(transform.position, touchKnockback);
+        }
     }
 }
