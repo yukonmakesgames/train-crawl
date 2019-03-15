@@ -21,11 +21,11 @@ public class PlayerController : MonoBehaviour
 
     [Header("Hands")]
     [SerializeField]
-    private HandController[] hands;
+    private HandController hand;
 
     [Header("Items")]
     [SerializeField]
-    private WeaponObject[] weapons;
+    private WeaponObject weapon;
 
     [HideInInspector]
     public float juice = 1f;
@@ -49,14 +49,9 @@ public class PlayerController : MonoBehaviour
     {
         if(juice > 0f)
         {
-            if (Input.GetButtonDown("RightHand"))
+            if (Input.GetButtonDown("Attack"))
             {
-                hands[0].Attack();
-            }
-
-            if (Input.GetButtonDown("LeftHand"))
-            {
-                hands[1].Attack();
+                hand.Attack();
             }
         }
 
@@ -72,10 +67,7 @@ public class PlayerController : MonoBehaviour
 
                     animator.SetBool("Dead", true);
 
-                    foreach (HandController hand in hands)
-                    {
-                        hand.Die();
-                    }
+                    hand.Die();
                 }   
             }
             else
@@ -110,17 +102,14 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateHands()
     {
-        for(var i = 0; i < hands.Length; i++)
-        { 
-            if(i < weapons.Length)
-            {
-                hands[i].gameObject.SetActive(true);
-                hands[i].UpdateWeapon(weapons[i]);
-            }
-            else
-            {
-                hands[i].gameObject.SetActive(false);
-            }
+        if(weapon != null)
+        {
+            hand.gameObject.SetActive(true);
+            hand.UpdateWeapon(weapon);
+        }
+        else
+        {
+            hand.gameObject.SetActive(false);
         }
     }
 
