@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: fa64ba8c6c343ce46bd0477e5a3c06e9, type: 3}
+  Damage: 0.5
+  Speed: 2
+  Knockback: 5

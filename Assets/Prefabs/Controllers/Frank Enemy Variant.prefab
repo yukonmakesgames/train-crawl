@@ -1,16 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &5481681148258257280
+--- !u!95 &3903323120351337008
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7481366427154991737}
+  m_GameObject: {fileID: 7481366426588209776}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0ff4060fdec53cc4784c06589fb5b30d, type: 2}
+  m_Controller: {fileID: 9100000, guid: acb7dd92a8a728045922aa3079c57b67, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -19,6 +19,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7481366426588209780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7481366426588209776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a6114416d248e49ab97e6ed75cbe86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  knockbackResistance: 0
+  spriteAnimator: {fileID: 2291851813946581731}
+  rb: {fileID: 0}
+  speed: 6
+  acceleration: 0.03125
 --- !u!1001 &7832554358529991224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30,6 +48,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Frank Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 820206607111340106, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
@@ -88,9 +111,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01d0e46fcd447140845f189f932c2ef, type: 3}
---- !u!1 &7481366427154991737 stripped
+--- !u!1 &7481366426588209776 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 820206607677089857, guid: c01d0e46fcd447140845f189f932c2ef,
+  m_CorrespondingSourceObject: {fileID: 820206607111340104, guid: c01d0e46fcd447140845f189f932c2ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 7832554358529991224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2291851813946581731 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8321695148643762395, guid: c01d0e46fcd447140845f189f932c2ef,
     type: 3}
   m_PrefabInstance: {fileID: 7832554358529991224}
   m_PrefabAsset: {fileID: 0}
