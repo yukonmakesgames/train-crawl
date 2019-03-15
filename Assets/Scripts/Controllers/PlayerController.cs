@@ -83,19 +83,22 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MoveRotation(Quaternion.Euler(0f, rb.rotation.eulerAngles.y + Input.GetAxisRaw("Horizontal") * turnSpeed, 0f));
-
-        if(Input.GetAxisRaw("Vertical") != 0)
+        if(!juiced)
         {
-            if(Physics.Raycast(transform.position + Vector3.up * groundCheckDistance, Vector3.down, groundCheckDistance * 2f))
+            rb.MoveRotation(Quaternion.Euler(0f, rb.rotation.eulerAngles.y + Input.GetAxisRaw("Horizontal") * turnSpeed, 0f));
+
+            if (Input.GetAxisRaw("Vertical") != 0)
             {
-                Vector3 idealVelocity = ((Input.GetAxisRaw("Vertical") * movementSpeed) * transform.forward);
-                Vector3 targetVelocity = new Vector3(idealVelocity.x, rb.velocity.y, idealVelocity.z);
-                rb.AddForce(targetVelocity - rb.velocity, ForceMode.VelocityChange);
-            }
-            else
-            {
-                Debug.DrawRay(transform.position + Vector3.up * groundCheckDistance, Vector3.down, Color.red);
+                if (Physics.Raycast(transform.position + Vector3.up * groundCheckDistance, Vector3.down, groundCheckDistance * 2f))
+                {
+                    Vector3 idealVelocity = ((Input.GetAxisRaw("Vertical") * movementSpeed) * transform.forward);
+                    Vector3 targetVelocity = new Vector3(idealVelocity.x, rb.velocity.y, idealVelocity.z);
+                    rb.AddForce(targetVelocity - rb.velocity, ForceMode.VelocityChange);
+                }
+                else
+                {
+                    Debug.DrawRay(transform.position + Vector3.up * groundCheckDistance, Vector3.down, Color.red);
+                }
             }
         }
     }
@@ -121,9 +124,12 @@ public class PlayerController : MonoBehaviour
 
     public void Knockback(Vector3 _position, float _knockback)
     {
-        Vector3 direction = transform.position - _position;
+        if(!juiced)
+        {
+            Vector3 direction = transform.position - _position;
 
-        direction = new Vector3(direction.normalized.x, 0.5f, direction.normalized.z);
-        rb.AddForce(direction.normalized * _knockback, ForceMode.Impulse);
+            direction = new Vector3(direction.normalized.x, 0.5f, direction.normalized.z);
+            rb.AddForce(direction.normalized * _knockback, ForceMode.Impulse);
+        }
     }
 }
