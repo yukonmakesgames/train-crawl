@@ -36,6 +36,8 @@ MonoBehaviour:
   touchKnockback: 5
   knockbackResistance: 0.5
   spriteAnimator: {fileID: 2552454314515660568}
+  explosionEffects: {fileID: 1132583390500627409, guid: 69d8e81b860f95d4493dbe8dd8a2e022,
+    type: 3}
   invincible: 0
   rb: {fileID: 0}
   speed: 1
@@ -51,11 +53,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Golem Enemy Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 820206607111340106, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
@@ -111,6 +108,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 820206607677089859, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Singletons.unity
     guid: c9901b10f4c222e43a17c6dccca8ae51
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 4e6afbef1a622364998a417cf546a190
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 28ef65f5206cf19459d07fb20016544e
   m_configObjects: {}

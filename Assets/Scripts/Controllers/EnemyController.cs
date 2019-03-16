@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     [Header("References")]
     [SerializeField]
     private Animator spriteAnimator;
+    [SerializeField]
+    private GameObject explosionEffects;
 
     [HideInInspector]
     public bool invincible = false;
@@ -53,7 +55,7 @@ public class EnemyController : MonoBehaviour
 
     public void Die()
     {
-        //TODO explosion
+        Instantiate(explosionEffects, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

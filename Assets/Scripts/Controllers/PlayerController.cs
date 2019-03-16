@@ -144,6 +144,11 @@ public class PlayerController : MonoBehaviour
             juice = 0f;
             DeathScreen(true);
         }
+
+        if (other.CompareTag("Goal"))
+        {
+            GameManager.Instance.NextCar(gameObject.scene);
+        }
     }
 
     public void DeathScreen(bool _instant)

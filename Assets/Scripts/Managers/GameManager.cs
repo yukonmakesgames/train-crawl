@@ -10,4 +10,11 @@ public class GameManager : Singleton<GameManager>
 
         LoadingManager.Instance.LoadScene("Main", _sceneToUnload);
     }
+
+    public void NextCar(Scene _sceneToUnload)
+    {
+        CarNumber++;
+
+        LoadingManager.Instance.LoadScene("Main", _sceneToUnload);
+    }
 }

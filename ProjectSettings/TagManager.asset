@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Killzone
+  - Goal
   layers:
   - Default
   - TransparentFX

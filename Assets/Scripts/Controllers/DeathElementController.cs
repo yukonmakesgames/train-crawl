@@ -73,7 +73,7 @@ public class DeathElementController : ElementController
 
             if(Input.GetButtonDown("Cancel"))
             {
-                //TODO Go to menu.
+                LoadingManager.Instance.LoadScene("Menu", gameObject.scene);
             }
         }
     }
