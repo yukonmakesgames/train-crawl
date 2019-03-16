@@ -52,6 +52,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem Enemy Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 820206607111340106, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
       propertyPath: m_LocalPosition.x

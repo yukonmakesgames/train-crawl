@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private WeaponObject weapon;
 
+    [Header("Reference")]
+    [SerializeField]
+    private UIManager uiManager;
+
     [HideInInspector]
     public float juice = 1f;
     private bool juiced = false;
@@ -131,5 +135,27 @@ public class PlayerController : MonoBehaviour
             direction = new Vector3(direction.normalized.x, 0.5f, direction.normalized.z);
             rb.AddForce(direction.normalized * _knockback, ForceMode.Impulse);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Killzone"))
+        {
+            juice = 0f;
+            DeathScreen(true);
+        }
+    }
+
+    public void DeathScreen(bool _instant)
+    {
+        if(uiManager.gameState != GameStateType.IdkProbablyDead)
+        {
+            uiManager.ChangeState(GameStateType.IdkProbablyDead, _instant);
+        }
+    }
+
+    public void Death()
+    {
+        DeathScreen(false);
     }
 }

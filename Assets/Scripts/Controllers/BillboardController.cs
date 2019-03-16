@@ -4,13 +4,15 @@ public class BillboardController : MonoBehaviour
 {
     private Camera camera;
 
-    private void Awake()
-    {
-        camera = Camera.main;
-    }
-
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.transform.rotation * Vector3.forward, camera.transform.rotation * Vector3.up);
+        if(camera != null)
+        {
+            transform.LookAt(transform.position + camera.transform.rotation * Vector3.forward, camera.transform.rotation * Vector3.up);
+        }
+        else
+        {
+            camera = Camera.main;
+        }
     }
 }
