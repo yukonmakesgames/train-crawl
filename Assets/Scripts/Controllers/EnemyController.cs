@@ -13,11 +13,20 @@ public class EnemyController : MonoBehaviour
     [Range(0f, 1f)]
     private float knockbackResistance = 0f;
 
+    [Header("Drop Pool")]
+    [SerializeField]
+    [Range(0f, 1f)]
+    private float itemDropChance = 0.5f;
+    [SerializeField]
+    private WeaponObject[] drops;
+
     [Header("References")]
     [SerializeField]
     private Animator spriteAnimator;
     [SerializeField]
     private GameObject explosionEffects;
+    [SerializeField]
+    private GameObject itemPrefab;
 
     [HideInInspector]
     public bool invincible = false;
@@ -56,6 +65,16 @@ public class EnemyController : MonoBehaviour
     public void Die()
     {
         Instantiate(explosionEffects, transform.position, Quaternion.identity);
+
+        if(drops.Length > 0)
+        {
+            if (Random.Range(0f, 1f) <= itemDropChance)
+            {
+                ItemController itemController = Instantiate(itemPrefab, transform.position, Quaternion.identity).GetComponentInChildren<ItemController>();
+                itemController.SetItem(drops[Random.Range(0, drops.Length)]);
+            }
+        }
+
         Destroy(gameObject);
     }
 

@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float juiceMax = 1f;
     [SerializeField]
+    private float juiceCooldown = 1f;
+    [SerializeField]
     private float juiceRegen = 0.125f;
 
     [Header("Properties")]
@@ -18,18 +20,18 @@ public class PlayerController : MonoBehaviour
     private float turnSpeed;
     [SerializeField]
     private float groundCheckDistance;
+    [SerializeField]
+    private float itemYeetForce = 1f; 
 
     [Header("Hands")]
     [SerializeField]
     private HandController hand;
 
-    [Header("Items")]
-    [SerializeField]
-    private WeaponObject weapon;
-
     [Header("Reference")]
     [SerializeField]
     private UIManager uiManager;
+    [SerializeField]
+    private GameObject itemPrefab;
 
     [HideInInspector]
     public float juice = 1f;
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private Animator animator;
+    private float currentJuiceTime = 0;
 
     private void Awake()
     {
@@ -76,7 +79,10 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                juice += juiceRegen * Time.deltaTime;
+                if(Time.time > currentJuiceTime)
+                {
+                    juice += juiceRegen * Time.deltaTime;
+                }
             }
         }
         else if(juice > juiceMax)
@@ -109,10 +115,10 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateHands()
     {
-        if(weapon != null)
+        if(GameManager.Instance.Weapon != null)
         {
             hand.gameObject.SetActive(true);
-            hand.UpdateWeapon(weapon);
+            hand.UpdateWeapon(GameManager.Instance.Weapon);
         }
         else
         {
@@ -124,6 +130,8 @@ public class PlayerController : MonoBehaviour
     {
         juice += _juiceAmount;
         juice = Mathf.Clamp(juice, 0f, juiceMax);
+
+        currentJuiceTime = Time.time + juiceCooldown;
     }
 
     public void Knockback(Vector3 _position, float _knockback)
@@ -148,6 +156,22 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             GameManager.Instance.NextCar(gameObject.scene);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.CompareTag("Item"))
+        {
+            if(Input.GetButtonUp("Cancel"))
+            {
+                GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+                newItem.GetComponentInChildren<ItemController>().SetItem(GameManager.Instance.Weapon);
+                newItem.GetComponent<Rigidbody>().AddForce((transform.forward + Vector3.up) * itemYeetForce, ForceMode.Impulse);
+
+                GameManager.Instance.Weapon = other.GetComponent<ItemController>().Pickup();
+                UpdateHands();
+            }
         }
     }
 

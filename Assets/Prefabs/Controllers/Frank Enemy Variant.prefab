@@ -35,8 +35,14 @@ MonoBehaviour:
   touchDamage: 0.25
   touchKnockback: 2.5
   knockbackResistance: 0
+  itemDropChance: 0.25
+  drops:
+  - {fileID: 11400000, guid: eeee0e11ab83a554f8c944eb9542eed7, type: 2}
+  - {fileID: 11400000, guid: 7a72d17eda6688f4dae00fbcb65fe5cf, type: 2}
   spriteAnimator: {fileID: 2291851813946581731}
   explosionEffects: {fileID: 1132583390500627409, guid: 69d8e81b860f95d4493dbe8dd8a2e022,
+    type: 3}
+  itemPrefab: {fileID: 8441109888423354798, guid: 9108ac44c6c2c0c498cf493ce8af63e5,
     type: 3}
   invincible: 0
   rb: {fileID: 0}
@@ -53,6 +59,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Frank Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340104, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 820206607111340106, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
@@ -109,10 +130,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+    - target: {fileID: 820206607677089858, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
-      propertyPath: m_Center.y
-      value: 0.75
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607677089858, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607677089857, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01d0e46fcd447140845f189f932c2ef, type: 3}

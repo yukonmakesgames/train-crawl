@@ -35,8 +35,15 @@ MonoBehaviour:
   touchDamage: 0.5
   touchKnockback: 5
   knockbackResistance: 0.5
+  itemDropChance: 1
+  drops:
+  - {fileID: 11400000, guid: a3c3ea0ee10009347b8e7d6d64736dd5, type: 2}
+  - {fileID: 11400000, guid: 45818579f340acf49b56c5f1282192de, type: 2}
+  - {fileID: 11400000, guid: be939256492d8274b88e452d15791389, type: 2}
   spriteAnimator: {fileID: 2552454314515660568}
   explosionEffects: {fileID: 1132583390500627409, guid: 69d8e81b860f95d4493dbe8dd8a2e022,
+    type: 3}
+  itemPrefab: {fileID: 8441109888423354798, guid: 9108ac44c6c2c0c498cf493ce8af63e5,
     type: 3}
   invincible: 0
   rb: {fileID: 0}
@@ -53,6 +60,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Golem Enemy Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340104, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 820206607111340106, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
@@ -109,10 +126,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+    - target: {fileID: 820206607677089857, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
-      propertyPath: m_Center.y
-      value: 0.75
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 820206607677089859, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}

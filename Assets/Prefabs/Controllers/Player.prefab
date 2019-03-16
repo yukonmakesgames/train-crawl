@@ -78,13 +78,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   juiceMax: 1
+  juiceCooldown: 1
   juiceRegen: 0.125
-  movementSpeed: 3
+  movementSpeed: 4
   turnSpeed: 4
   groundCheckDistance: 0.125
+  itemYeetForce: 3
   hand: {fileID: 6048808227544917274}
-  weapon: {fileID: 11400000, guid: 7a72d17eda6688f4dae00fbcb65fe5cf, type: 2}
   uiManager: {fileID: 0}
+  itemPrefab: {fileID: 8441109888423354798, guid: 9108ac44c6c2c0c498cf493ce8af63e5,
+    type: 3}
   juice: 1
 --- !u!95 &338125058
 Animator:

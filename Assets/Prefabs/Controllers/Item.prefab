@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8441109886401375172}
   - component: {fileID: 8441109886401375173}
-  m_Layer: 0
+  - component: {fileID: 6679238866383578981}
+  m_Layer: 9
   m_Name: Hitbox
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +45,23 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &6679238866383578981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8441109886401375179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87cf201f1440f34cadf9ac50bea4da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponObject: {fileID: 11400000, guid: 17861bd3f145efe47a03fcc74324fcc1, type: 2}
+  freq: 6
+  amp: 0.125
+  spriteRenderer: {fileID: 8441109886454158895}
+  root: {fileID: 8441109888423354798}
 --- !u!1 &8441109886454158893
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,9 +73,9 @@ GameObject:
   - component: {fileID: 8441109886454158894}
   - component: {fileID: 8441109886454158895}
   - component: {fileID: 8441109886454158888}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Display
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,9 +165,9 @@ GameObject:
   - component: {fileID: 8441109888423354794}
   - component: {fileID: 8441109888423354799}
   - component: {fileID: 8441109888423354792}
-  m_Layer: 9
+  m_Layer: 12
   m_Name: Item
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8441109888423354798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3102622, y: 0, z: 17.832283}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8441109886454158894}

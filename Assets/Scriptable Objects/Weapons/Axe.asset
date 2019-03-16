@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057b170551899d94485a9a1346f89f02, type: 3}
-  m_Name: Sword
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: fa64ba8c6c343ce46bd0477e5a3c06e9, type: 3}
-  Damage: 0.5
-  Speed: 1
-  Knockback: 5
-  Stun: 1
-  JuiceCost: -0.125
+  Sprite: {fileID: 21300000, guid: 1d7c38c572eba3b49960e07dc9131644, type: 3}
+  Damage: 2
+  Speed: 0.25
+  Knockback: 7.5
+  Stun: 2
+  JuiceCost: -0.5
