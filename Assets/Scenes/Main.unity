@@ -1559,7 +1559,7 @@ MonoBehaviour:
   openEase: 5
   closeEase: 6
   carCountText: {fileID: 1270660916}
-  carStringPrefix: 'You crawled '
+  carStringPrefix: 'You crawled through '
   carStringSuffix: ' cars...'
 --- !u!4 &1730455445 stripped
 Transform:
