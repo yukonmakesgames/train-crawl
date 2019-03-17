@@ -21,7 +21,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float groundCheckDistance;
     [SerializeField]
-    private float itemYeetForce = 1f; 
+    private float itemYeetForce = 1f;
+    [SerializeField]
+    private float itemSideYeetForceMax = 0.5f;
 
     [Header("Hands")]
     [SerializeField]
@@ -167,7 +169,7 @@ public class PlayerController : MonoBehaviour
             {
                 GameObject newItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
                 newItem.GetComponentInChildren<ItemController>().SetItem(GameManager.Instance.Weapon);
-                newItem.GetComponent<Rigidbody>().AddForce((transform.forward + Vector3.up) * itemYeetForce, ForceMode.Impulse);
+                newItem.GetComponent<Rigidbody>().AddForce(rb.velocity + ((transform.forward + Vector3.up) * itemYeetForce) + (transform.right * Random.Range(-itemSideYeetForceMax, itemSideYeetForceMax)), ForceMode.Impulse);
 
                 GameManager.Instance.Weapon = other.GetComponent<ItemController>().Pickup();
                 UpdateHands();

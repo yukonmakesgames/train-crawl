@@ -84,6 +84,7 @@ MonoBehaviour:
   turnSpeed: 4
   groundCheckDistance: 0.125
   itemYeetForce: 3
+  itemSideYeetForceMax: 2
   hand: {fileID: 6048808227544917274}
   uiManager: {fileID: 0}
   itemPrefab: {fileID: 8441109888423354798, guid: 9108ac44c6c2c0c498cf493ce8af63e5,

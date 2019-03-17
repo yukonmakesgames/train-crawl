@@ -62,6 +62,7 @@ MonoBehaviour:
   amp: 0.125
   spriteRenderer: {fileID: 8441109886454158895}
   root: {fileID: 8441109888423354798}
+  hitboxCollider: {fileID: 8441109886401375173}
 --- !u!1 &8441109886454158893
 GameObject:
   m_ObjectHideFlags: 0

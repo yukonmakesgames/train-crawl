@@ -17,6 +17,8 @@ public class ItemController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     [SerializeField]
     private GameObject root;
+    [SerializeField]
+    private Collider hitboxCollider;
 
     private float spriteYPosition = 0f;
 
@@ -28,6 +30,9 @@ public class ItemController : MonoBehaviour
         {
             SetItem(weaponObject);
         }
+
+        hitboxCollider.enabled = false;
+        Invoke("Hitable", 0.125f);
     }
 
     private void Update()
@@ -46,5 +51,10 @@ public class ItemController : MonoBehaviour
     {
         Destroy(root);
         return weaponObject;
+    }
+
+    public void Hitable()
+    {
+        hitboxCollider.enabled = true;
     }
 }
