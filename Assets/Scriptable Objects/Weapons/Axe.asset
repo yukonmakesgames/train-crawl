@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprite: {fileID: 21300000, guid: 1d7c38c572eba3b49960e07dc9131644, type: 3}
   Damage: 2
-  Speed: 0.25
+  Speed: 0.375
   Knockback: 7.5
   Stun: 2
   JuiceCost: -0.5
+  SlashSpeed: 0.75
+  SlashSize: {x: 2, y: 1, z: 1.5}

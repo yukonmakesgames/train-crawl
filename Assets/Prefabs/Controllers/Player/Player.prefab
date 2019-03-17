@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Right Hand
       objectReference: {fileID: 0}
+    - target: {fileID: 8888533126205288121, guid: b627c53deebb25246a157dbef134e255,
+        type: 3}
+      propertyPath: slashOffset.y
+      value: -0.375
+      objectReference: {fileID: 0}
     - target: {fileID: 6578255106922907323, guid: b627c53deebb25246a157dbef134e255,
         type: 3}
       propertyPath: m_LocalPosition.x
