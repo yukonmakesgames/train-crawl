@@ -47,6 +47,7 @@ MonoBehaviour:
   - {fileID: 3037818941412122236, guid: efa64c3dc0a89bb4494ba86afc323938, type: 3}
   - {fileID: 1523600420177552044, guid: 96755ac895235e141b82524bd2c48c6a, type: 3}
   - {fileID: 4596921648964082457, guid: 25fc783941cf64e458747c0d9440c43f, type: 3}
+  positionToGoTo: {x: 7, y: 0, z: 3}
   door: {fileID: 0}
   doorOpenTime: 1
   doorOpenEase: 30

@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private float currentJuiceTime = 0;
+    private bool chillBro = false;
 
     private void Awake()
     {
@@ -56,7 +57,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(juice > 0f)
+        if(juice > 0f && !juiced && !chillBro)
         {
             if (Input.GetButtonDown("Attack"))
             {
@@ -95,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!juiced)
+        if(!juiced && !chillBro)
         {
             rb.MoveRotation(Quaternion.Euler(0f, rb.rotation.eulerAngles.y + Input.GetAxisRaw("Horizontal") * turnSpeed, 0f));
 
@@ -138,7 +139,7 @@ public class PlayerController : MonoBehaviour
 
     public void Knockback(Vector3 _position, float _knockback)
     {
-        if(!juiced)
+        if(!juiced && !chillBro)
         {
             Vector3 direction = transform.position - _position;
 
@@ -158,6 +159,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Goal"))
         {
             GameManager.Instance.NextCar(gameObject.scene);
+            chillBro = true;
         }
     }
 

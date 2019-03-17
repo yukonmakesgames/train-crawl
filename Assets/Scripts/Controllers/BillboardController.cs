@@ -12,7 +12,7 @@ public class BillboardController : MonoBehaviour
         }
         else
         {
-            camera = Camera.main;
+            camera = GameObject.FindGameObjectWithTag("Player Camera").GetComponent<Camera>();
         }
     }
 }

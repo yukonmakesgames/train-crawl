@@ -9,6 +9,8 @@ public class SpawnManager : MonoBehaviour
 
     [Header("Door")]
     [SerializeField]
+    private Vector3 positionToGoTo;
+    [SerializeField]
     private Rigidbody door;
     [SerializeField]
     private float doorOpenTime = 1f;
@@ -34,8 +36,7 @@ public class SpawnManager : MonoBehaviour
 
                 Debug.Log("Car cleared.");
 
-                door.DORotate(new Vector3(0f, 0f, -90f), doorOpenTime).SetEase(doorOpenEase);
-                //Winning garbage.
+                door.DOMove(positionToGoTo, doorOpenTime).SetEase(doorOpenEase);
             }
         }
     }
