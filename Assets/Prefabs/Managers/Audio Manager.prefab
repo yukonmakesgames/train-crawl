@@ -43,4 +43,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b14c9c3d8617a4ba73b4dc1e5de6d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Main Theme
+    clip: {fileID: 8300000, guid: 3c8b649dba461b14f9f6a6b185e21695, type: 3}
+    volume: 0.25
+    pitch: 1
+    Loop: 1
+    source: {fileID: 0}
+  - name: Select
+    clip: {fileID: 8300000, guid: 876c6dde329267b41babea89bd3352ba, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Enemy Hit
+    clip: {fileID: 8300000, guid: 71868c6ac6003654ca91391046223503, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Door Open
+    clip: {fileID: 8300000, guid: 54a54d17bd648244b8bf2107bec5e251, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Player Hit
+    clip: {fileID: 8300000, guid: 4f37df45e166a694899fbe6def788c5e, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Enemy Death
+    clip: {fileID: 8300000, guid: af4f7a55e1a475a41b70c10b0167cb14, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Attack
+    clip: {fileID: 8300000, guid: cfdf5c7a314ac8845b9b61d0fbd56ac6, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}
+  - name: Pickup
+    clip: {fileID: 8300000, guid: d9ac1c6f947eb1b409c9f54948b5026b, type: 3}
+    volume: 1
+    pitch: 1
+    Loop: 0
+    source: {fileID: 0}

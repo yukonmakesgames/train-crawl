@@ -52,6 +52,7 @@ public class EnemyController : MonoBehaviour
 
             if (currentHealth <= 0f)
             {
+                AudioManager.Instance.Play("Enemy Death");
                 Die();
             }
             else
@@ -60,6 +61,8 @@ public class EnemyController : MonoBehaviour
                 spriteAnimator.SetBool("Invincible", true);
 
                 Invoke("BecomeMortal", _invincibleTime);
+
+                AudioManager.Instance.Play("Enemy Hit");
             }
         }
     }
@@ -103,6 +106,7 @@ public class EnemyController : MonoBehaviour
         {
             collision.collider.gameObject.GetComponent<PlayerController>().JuicePlayer(-touchDamage);
             collision.collider.gameObject.GetComponent<PlayerController>().Knockback(transform.position, touchKnockback);
+            AudioManager.Instance.Play("Player Hit");
         }
     }
 

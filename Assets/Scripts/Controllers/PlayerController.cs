@@ -173,6 +173,8 @@ public class PlayerController : MonoBehaviour
                 newItem.GetComponentInChildren<ItemController>().SetItem(GameManager.Instance.Weapon);
                 newItem.GetComponent<Rigidbody>().AddForce(rb.velocity + ((transform.forward + Vector3.up) * itemYeetForce) + (transform.right * Random.Range(-itemSideYeetForceMax, itemSideYeetForceMax)), ForceMode.Impulse);
 
+                AudioManager.Instance.Play("Pickup");
+
                 GameManager.Instance.Weapon = other.GetComponent<ItemController>().Pickup();
                 UpdateHands();
             }

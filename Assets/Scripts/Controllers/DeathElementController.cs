@@ -68,11 +68,15 @@ public class DeathElementController : ElementController
         {
             if(Input.GetButtonDown("Attack"))
             {
+                AudioManager.Instance.Play("Select");
+
                 GameManager.Instance.Restart(gameObject.scene);
             }
 
             if(Input.GetButtonDown("Cancel"))
             {
+                AudioManager.Instance.Play("Select");
+
                 LoadingManager.Instance.LoadScene("Menu", gameObject.scene);
             }
         }

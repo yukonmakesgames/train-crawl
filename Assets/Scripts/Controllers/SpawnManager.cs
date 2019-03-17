@@ -37,6 +37,8 @@ public class SpawnManager : MonoBehaviour
                 Debug.Log("Car cleared.");
 
                 door.DOMove(positionToGoTo, doorOpenTime).SetEase(doorOpenEase);
+
+                AudioManager.Instance.Play("Door Open");
             }
         }
     }
