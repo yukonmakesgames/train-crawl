@@ -963,15 +963,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lucas Demo
-
-    Jordan Kegler
-
-    Ovie Mukoro
-
-    Yukon Wainczak
-
-    Train Jam 2019 Audio Car'
+  m_Text: "Lucas \"@LukBebalduk3\" Demo\nJordan \"@Wavestormed\" Kegler\nOvie \"@Libaari\r\"
+    Mukoro\nYukon \"@YWainczak\" Wainczak\nMaize \"@MaizeWallin\" Wallin"
 --- !u!222 &1561470934
 CanvasRenderer:
   m_ObjectHideFlags: 0
