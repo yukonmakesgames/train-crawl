@@ -2,9 +2,16 @@
 
 public class HandController : MonoBehaviour
 {
+    [Header("Properties")]
+    [SerializeField]
+    private Vector3 slashOffset;
+
+    [Header("References")]
+    [SerializeField]
+    private GameObject slashPrefab;
+
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    private Collider hitbox;
     private PlayerController playerController;
 
     private WeaponObject weaponObject;
@@ -13,21 +20,7 @@ public class HandController : MonoBehaviour
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        hitbox = GetComponent<Collider>();
         playerController = GetComponentInParent<PlayerController>();
-
-        HitUnactive();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Enemy"))
-        {
-            EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
-
-            enemyController.Knockback(transform.position, weaponObject.Knockback);
-            enemyController.TakeDamage(weaponObject.Damage, weaponObject.Stun);
-        }
     }
 
     public void UpdateWeapon(WeaponObject _weaponObject)
@@ -48,14 +41,12 @@ public class HandController : MonoBehaviour
         animator.SetTrigger("Dead");
     }
 
-    public void HitActive()
+    public void Hit()
     {
-        hitbox.enabled = true;
-        playerController.JuicePlayer(weaponObject.JuiceCost);
-    }
+        SlashController slashController = Instantiate(slashPrefab, transform).GetComponent<SlashController>();
+        slashController.transform.localPosition += slashOffset;
+        slashController.Setup(weaponObject, GetComponentInParent<Rigidbody>().velocity);
 
-    public void HitUnactive()
-    {
-        hitbox.enabled = false;
+        playerController.JuicePlayer(weaponObject.JuiceCost);
     }
 }

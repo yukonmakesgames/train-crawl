@@ -18,3 +18,5 @@ MonoBehaviour:
   Knockback: 0.25
   Stun: 0.125
   JuiceCost: -0.03125
+  SlashSpeed: 0.5
+  SlashSize: {x: 0.5, y: 1, z: 0.5}
