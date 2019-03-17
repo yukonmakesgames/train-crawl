@@ -30,7 +30,9 @@ public class LoadingController : MonoBehaviour
 	{
 		loadingScene = gameObject.scene;
         Application.targetFrameRate = 60;
-	}
+        Cursor.visible = false;
+
+    }
 
 	/// <summary>
 	/// Get the Loading Manager. If the Loading Manager has a current scene to load, it will pass the values over. If not, it will load the default scene.
