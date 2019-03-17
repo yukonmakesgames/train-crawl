@@ -34,11 +34,13 @@ MonoBehaviour:
   health: 1
   touchDamage: 0.25
   touchKnockback: 2.5
-  knockbackResistance: 0
+  touchStepback: 2.5
+  knockbackResistance: 0.25
   itemDropChance: 0.25
   drops:
   - {fileID: 11400000, guid: eeee0e11ab83a554f8c944eb9542eed7, type: 2}
-  - {fileID: 11400000, guid: 7a72d17eda6688f4dae00fbcb65fe5cf, type: 2}
+  - {fileID: 11400000, guid: 45818579f340acf49b56c5f1282192de, type: 2}
+  - {fileID: 11400000, guid: be939256492d8274b88e452d15791389, type: 2}
   spriteAnimator: {fileID: 2291851813946581731}
   explosionEffects: {fileID: 1132583390500627409, guid: 69d8e81b860f95d4493dbe8dd8a2e022,
     type: 3}
@@ -64,16 +66,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
-        type: 3}
-      propertyPath: m_Center.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
-        type: 3}
-      propertyPath: m_Radius
-      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 820206607111340106, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
@@ -138,6 +130,16 @@ PrefabInstance:
     - target: {fileID: 820206607677089858, guid: c01d0e46fcd447140845f189f932c2ef,
         type: 3}
       propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 820206607111340105, guid: c01d0e46fcd447140845f189f932c2ef,
+        type: 3}
+      propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 820206607677089857, guid: c01d0e46fcd447140845f189f932c2ef,

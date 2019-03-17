@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057b170551899d94485a9a1346f89f02, type: 3}
-  m_Name: Debug Sword
+  m_Name: Hammer
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 1b55c7a78d8657344bc0436f9e30b19a, type: 3}
-  Damage: 999
-  Speed: 0.5
-  Knockback: 999
-  Stun: 1
-  JuiceCost: 1
+  Sprite: {fileID: 21300000, guid: 3abb1a08266e977439160c1574214f23, type: 3}
+  Damage: 1.5
+  Speed: 0.375
+  Knockback: 10
+  Stun: 3
+  JuiceCost: -0.5
+  SlashSpeed: 0.75
+  SlashSize: {x: 1.5, y: 1, z: 1.5}

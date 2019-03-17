@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public class FrankEnemyController : EnemyController
+public class ChaseEnemyController : EnemyController
 {
-    [Header("Frank")]
+    [Header("Chase")]
     [SerializeField]
     private float speed;
     [SerializeField]

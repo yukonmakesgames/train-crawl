@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 057b170551899d94485a9a1346f89f02, type: 3}
-  m_Name: Dagger
+  m_Name: Trident
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 5669f19d8ff2a184fbaaf4716662f33f, type: 3}
-  Damage: 0.25
-  Speed: 1
-  Knockback: 0.25
-  Stun: 0.125
-  JuiceCost: -0.03125
+  Sprite: {fileID: 21300000, guid: 327ac0c9ea8d7524a8ddc8f8e1440529, type: 3}
+  Damage: 1.25
+  Speed: 0.75
+  Knockback: 1.25
+  Stun: 0.75
+  JuiceCost: -0.25
   SlashSpeed: 1.25
-  SlashSize: {x: 0.5, y: 1, z: 0.5}
+  SlashSize: {x: 0.75, y: 1, z: 2.5}
