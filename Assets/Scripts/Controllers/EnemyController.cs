@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private float touchKnockback = 5f;
     [SerializeField]
+    private float touchStepback = 2.5f;
+    [SerializeField]
     [Range(0f, 1f)]
     private float knockbackResistance = 0f;
 
@@ -84,13 +86,14 @@ public class EnemyController : MonoBehaviour
         spriteAnimator.SetBool("Invincible", false);
     }
 
-    public void Knockback(Vector3 _direction, float _knockback)
+    public void Knockback(Vector3 _position, float _knockback)
     {
         if (!invincible)
         {
-            _direction = new Vector3(_direction.normalized.x, 0.5f, _direction.normalized.z);
+            Vector3 direction = transform.position - _position;
 
-            rb.AddForce(_direction.normalized * _knockback, ForceMode.Impulse);
+            direction = new Vector3(direction.normalized.x, 0.5f, direction.normalized.z);
+            rb.AddForce(direction.normalized * _knockback, ForceMode.Impulse);
         }
     }
 
@@ -100,6 +103,14 @@ public class EnemyController : MonoBehaviour
         {
             collision.collider.gameObject.GetComponent<PlayerController>().JuicePlayer(-touchDamage);
             collision.collider.gameObject.GetComponent<PlayerController>().Knockback(transform.position, touchKnockback);
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.collider.gameObject.CompareTag("Player"))
+        {
+            Knockback(collision.collider.gameObject.transform.position, touchStepback);
         }
     }
 }

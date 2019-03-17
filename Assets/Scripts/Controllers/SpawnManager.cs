@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using DG.Tweening;
 
-public class SpawningController : MonoBehaviour
+public class SpawnManager : MonoBehaviour
 {
     [Header("Chunks")]
     [SerializeField]

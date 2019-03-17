@@ -25,7 +25,7 @@ public class HandController : MonoBehaviour
         {
             EnemyController enemyController = other.gameObject.GetComponent<EnemyController>();
 
-            enemyController.Knockback(other.transform.position - transform.position, weaponObject.Knockback);
+            enemyController.Knockback(transform.position, weaponObject.Knockback);
             enemyController.TakeDamage(weaponObject.Damage, weaponObject.Stun);
         }
     }
